@@ -18,8 +18,8 @@
   |%%      |Modulo           |5 %% 2        |1      |
   
 * __variable assignment__ : 
-  * use **`<-`**
-  * example :
+  * ✒ use **`<-`**
+  * 📝 **example** :
     ```
     # Assign a value to the variables my_apples and my_oranges
     my_apple <- 5
@@ -35,15 +35,15 @@
     my_apple
     my_orange
     ```
-  * result :
+  * 🔎 **result** :
     ```
     5
     6
     ```
     
 * __variables operation__ : 
-  * variables need same data type (e.g. my_apples and my_oranges are numeric).
-  * example :
+  * 🌟 variables need same data type (e.g. my_apples and my_oranges are numeric).
+  * 📝 **example** :
     ```
     # Assign a value to the variables my_apples and my_oranges
     my_apples <- 5
@@ -58,7 +58,7 @@
     # Print out the value of the variable my_fruit
     my_fruit
     ```
-  * result :
+  * 🔎 **result** :
     ```
     12
     ```
@@ -73,8 +73,8 @@
   |characters  |Text, string                  |"universe"    |                           |
 
 * __check variable data type__ :
-  * use **`class()`** function
-  * example :
+  * ✒ use **`class()`** function
+  * 📝 **example** :
     ```
     # Declare variables of different types
     my_numeric <- 42
@@ -90,7 +90,7 @@
     # Check class of my_logical
     class(my_logical)
     ```
-  * result :
+  * 🔎 **result** :
     ```
     "numeric"
     "character"
