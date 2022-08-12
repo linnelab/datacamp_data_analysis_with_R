@@ -1,7 +1,7 @@
 # Lesson 1 : Introduction to R
 
 ## 1-2. Vectors
-* vectors like one dimensional array or list.
+* vectors like one dimension array or list.
 * __create a vector__ : 
   * ✒ use combine function **`c()`**
   * 📝 **example** :
@@ -191,7 +191,7 @@
         Monday   Tuesday Wednesday 
           140       -50        20 
         ```
-* Calculate the average of the values for the vector :
+* __Calculate the average of the values for the vector__ :
   * ✒ use **`mean()`** function
   * 📝 __example__ :
     ```
