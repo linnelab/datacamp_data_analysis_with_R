@@ -1,7 +1,7 @@
 # Lesson 1 : Introduction to R
 
 ## 1-4. Factors
-* create factors :
+* __create factors__ :
   * ✒ use **`factor()`** function : can get categories on vector, at work here: "Male" and "Female".
   * 📝 **example** :
     * It is clear that there are two categories, or in R-terms called **'factor levels'**.
@@ -21,7 +21,7 @@
     Levels: Female Male
     ```
 
-* create an ordered factor :
+* __create an ordered factor__ :
   * ✒ use **`factor()`** function and add two additional arguments: **`ordered`** and **`levels`**.
   * For example :
     ```
@@ -44,7 +44,7 @@
     Levels: Low < Medium < High
     ```   
     
-* change levels name : 
+* __change levels name__ : 
   * ✒ use **`levels()`** function :
   * For example :
     ```
@@ -78,7 +78,7 @@
     Levels: Female Male
     ```
     
-* get factor information :
+* __get factor information__ :
   * ✒ use **`summary()`** function : quick overview of the contents of a variable, vector or factor.
   * For example :
     ```
@@ -115,7 +115,7 @@
          2        3 
     ```
     
-* Comparing ordered factors :
+* __Comparing ordered factors__ :
   * use **`comparison operators`**
   * can use the **`>`** operator to check whether one element is larger than the other.
   * if you want to **compare elements of a factor**, it need to create a **ordered factor**.
