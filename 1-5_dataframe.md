@@ -253,7 +253,7 @@
       ```
 
 * __Sorting data frame__ :
-  * use **`order()`** function :  the ranked position of each element.
+  * ✒ use **`order()`** function :  the ranked position of each element.
   * sorting method : ascending.
   * 📝 **example** :
     ```
