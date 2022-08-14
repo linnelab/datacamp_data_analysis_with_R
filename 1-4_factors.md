@@ -1,6 +1,7 @@
 # Lesson 1 : Introduction to R
 
 ## 1-4. Factors
+* find each of category on vector.
 * __create factors__ :
   * ✒ use **`factor()`** function : can get categories on vector, at work here: "Male" and "Female".
   * 📝 **example** :
