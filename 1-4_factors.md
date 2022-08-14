@@ -119,7 +119,7 @@
 * __Comparing ordered factors__ :
   * use **`comparison operators`**
   * can use the **`>`** operator to check whether one element is larger than the other.
-  * if you want to **compare elements of a factor**, it need to create a **ordered factor**.
+  * 🌟 if you want to **compare elements of a factor**, it need to create a **ordered factor**.
     * if you **not ordered factor**, R will **returns a warning message**, 
       <br>telling you that **the greater than operator is not meaningful** and get **NA** value.
     * factor default is not ordered.
