@@ -1,6 +1,6 @@
 # Lesson 1 : Introduction to R
 
-## 1-5. Data frames
+## 1-5. Dataframe
 
 * __create data frame__ :
   * ✒ use **`data.frame()`** :
