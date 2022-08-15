@@ -141,6 +141,13 @@
     # Print out the list
     shining_list
     
+    # Print out all actors 
+    ## method 1 :
+    shining_list$actors
+    
+    ## method 2 :
+    shining_list[["actors"]]
+    
     # Print the second element of the actors
     ## method 1:
     shining_list$actors[2]
@@ -163,6 +170,14 @@
     1    4.5   IMDb1                     Best Horror Film I Have Ever Seen
     2    4.0   IMDb2 A truly brilliant and scary film from Stanley Kubrick
     3    5.0   IMDb3                 A masterpiece of psychological horror
+    
+    shining_list$actors
+    [1] "Jack Nicholson"   "Shelley Duvall"   "Danny Lloyd"      "Scatman Crothers"
+    [5] "Barry Nelson"
+    
+    shining_list[["actors"]]
+    [1] "Jack Nicholson"   "Shelley Duvall"   "Danny Lloyd"      "Scatman Crothers"
+    [5] "Barry Nelson"
     
     shining_list$actors[2]
     "Shelley Duvall"
