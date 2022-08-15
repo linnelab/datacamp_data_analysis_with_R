@@ -1,7 +1,7 @@
 # Lesson 1 : Introduction to R
 
 ## 1-2. Vectors
-* vectors like one dimension array or list.
+* **(one dimensional array)** can hold numeric, character or logical values. The elements in a vector all have the **same data type**.
 * __create a vector__ : 
   * ✒ use combine function **`c()`**
   * 📝 **example** :
