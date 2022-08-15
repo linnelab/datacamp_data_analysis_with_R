@@ -132,7 +132,7 @@
  
 * Selecting elements from a list :
   * ✒ use **`[[]]`** or use **`$`** select components, then you can use **`[]`** to get elements of components.
-  * 🌟 Note : select elements from vectors, you use single square brackets (i.e. []), Don't mix them up!
+  * 🌟 Note : select elements from vectors, you use single square brackets (i.e. **`[]`**), Don't mix them up!
   * 📝 **example** :
     ```
     # build shining_list
