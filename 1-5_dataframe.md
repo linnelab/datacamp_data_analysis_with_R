@@ -1,7 +1,7 @@
 # Lesson 1 : Introduction to R
 
 ## 1-5. Dataframe
-
+* **(two-dimensional objects)** can hold numeric, character or logical values. Within **a column all elements** have the **same data type**, but **different columns** can be of **different data type**.
 * __create data frame__ :
   * ✒ use **`data.frame()`** :
   * 📝 **example** :
