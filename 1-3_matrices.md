@@ -1,7 +1,7 @@
 # Lesson 1 : Introduction to R
 
 ## 1-3. Matrices
-* Matrics like two dimention array or dataframe
+* **(two dimensional array)** can hold numeric, character or logical values. The elements in a matrix all have the **same data type**.
 * __create a matrix__ :
   * ✒ use **`matrix()`** function
     * the first argument : <br>is the collection of **elements** will arrange into the rows and columns of the matrix. 
