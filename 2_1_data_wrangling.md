@@ -15,7 +15,16 @@
   
   * dplyr package
     * **`transforming data`**, such as filtering, sorting, and summarizing it.
-  
+
+* __Install package__ :
+  * use **`install.packages("package_name")`**.
+  * run this script on R console.
+  * 📝 **example** :
+    ```
+    install.packages("gapminder")
+    install.packages("dplyr")
+    ```
+
 * __Import package__ :
   * ✒ use **`library()`** function.
   * 📝 **example** :
