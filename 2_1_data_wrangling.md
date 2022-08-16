@@ -2,21 +2,21 @@
 
 ## 2-1. Data wrangling
 * __Introdution__ :
-  * Tidyverse tool : 
+  * tidyverse tool : 
     * A collection of **`data science tools`** within R for **`transforming and visualizing data`**.
     * This is not the only set of tools in R, but it's a powerful and **`popular approach for exploring data`**.
   
-  * Gapminder package : 
+  * gapminder package : 
     * contains the **`dataset`** : tracks economic and social indicators like life expectancy and the GDP per capita of countries over time. 
     * data structure is a **`data frame`**.
-    * if you output Gapminder data frame : 
+    * if you print gapminder data frame : 
       * first line will show **tibble**, it's a special data frame. 
       * default show **10 rows**.
   
   * dplyr package
     * **`transforming data`**, such as filtering, sorting, and summarizing it.
   
-* __import package__ :
+* __Import package__ :
   * ✒ use **`library()`** function.
   * 📝 **example** :
     ```
@@ -47,10 +47,10 @@
     10 Afghanistan Asia       1997    41.8 22227415      635.
     # … with 1,694 more rows
     ```
-* __filter data__ :
+* __Filter data__ :
   * use verb **`filter(condition1, condition2, ...)`** funciton.
-    * it will not to change original dataframe data, it will create a new data frame.
-  * 🌟 **Note** : 
+    * it will not to change original dataframe data (e.g. gapminder), it will create a new data frame.
+  * 🌟 **note** : 
     * every time you apply a **`verb`**, you'll use a **`pipe (%>%)`**.
     * this pipe means take whatever is before it, and feed it into the next step.
     * **correct** : the pipe (%>%) put the verb at the end of the previous line.
@@ -110,10 +110,10 @@
         <fct>   <fct>     <int>   <dbl>      <int>      <dbl>
       1 China   Asia       2002    72.0   1280400000    3119.
     ```
-* __sorting data__ :
+* __Sorting data__ :
   * use verb **`arrange()`** function
   * sorting a table based on variable (i.e. column).
-    * it will not to change original dataframe data, it will create a new data frame.
+    * it will not to change original dataframe data (e.g. gapminder), it will create a new data frame.
   * 📝 **example** :
     ```
     # loading package
@@ -181,10 +181,10 @@
     # … with 132 more rows
     ```
     
-* __change column data or add new column__ :
+* __Change column data or add new column__ :
   * use verb **`mutate()`** function.
   * changes or adds variables (i.e. variable = column).
-    * it will not to change original dataframe data, it will create a new data frame.
+    * it will not to change original dataframe data (e.g. gapminder), it will create a new data frame.
   * 📝 **example** :
     ```
     # loading package
