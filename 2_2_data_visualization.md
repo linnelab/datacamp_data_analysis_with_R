@@ -1,6 +1,6 @@
 # Lesson 2 : Introduction to the Tidyverse
 
-## 2-2. Data visualization
+## 2-2. Data Visualization - Scatter Plot
 * __Create a scatter plot__ :
   * 🔆 Step 1 : load package : 
     * **`ggplot2`** : data visualization.
