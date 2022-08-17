@@ -72,6 +72,17 @@
     * 🔎 **result** :
     
       ![image](https://user-images.githubusercontent.com/15766139/185029887-697ae00b-a93e-49f0-ad26-ba018232c083.png)
-    
-    
-* __Create faceting__ :
+       
+* __Create scatter subplot__ : 
+  * You can add function **`facet_wrap(~ column_name)`**
+    * **~** : means **"by"**, meaning that you're splitting the plot by this column.
+    * 📝 **example** : 
+      ```
+      ggplot(gapminder_2007, aes(x = pop, y = lifeExp, color = continent, size = gdpPercap)) +
+          geom_point() +
+          scale_x_log10() +
+          facet_wrap(~ year)
+      ```
+    * 🔎 **result** : 
+      ![image](https://user-images.githubusercontent.com/15766139/185040187-752aba68-cb44-44b8-89af-a56645602194.png)
+  
