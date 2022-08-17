@@ -1,7 +1,7 @@
 # Lesson 2 : Introduction to the Tidyverse
 
 ## 2-2. Data visualization
-* __create a scatter plot__ :
+* __Create a scatter plot__ :
   * Step 1 : load package : 
     * 🌟 **`ggplot2`** : data visualization.
     * **`gapminder`** : get dataset.
@@ -74,4 +74,4 @@
       ![image](https://user-images.githubusercontent.com/15766139/185029887-697ae00b-a93e-49f0-ad26-ba018232c083.png)
     
     
-* __create faceting__ :
+* __Create faceting__ :
