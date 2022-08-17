@@ -2,23 +2,23 @@
 
 ## 2-2. Data visualization
 * __Create a scatter plot__ :
-  * Step 1 : load package : 
-    * 🌟 **`ggplot2`** : data visualization.
-    * **`gapminder`** : get dataset.
-    * **`dplyr`** : transfrom data, like filter(), mutate(), arrange() function.
+  * 🔆 Step 1 : load package : 
+    * **`ggplot2`** : data visualization.
+    * **gapminder** : get dataset.
+    * **dplyr** : transfrom data, like filter(), mutate(), arrange() function.
     * 📝 **example** : 
       ```
       library(gapminder)
       library(dplyr)
       library(ggplot2)
       ```
-  * Step 2 : use variable assignment to create a data subset, this data subset will use to draw plot.
+  * 🔆 Step 2 : use variable assignment to create a data subset, this data subset will use to draw plot.
     * 📝 **example** : 
       ```
       # create gapminder_2007 data subset
       gapminder_2007 <- gapminder %>%
           filter(year == 2007)
-          
+
       # print out gapminder_2007
       gapminder_2007
       ```
@@ -40,7 +40,7 @@
       10 Belgium     Europe     2007    79.4  10392226    33693.
       # … with 132 more rows
       ```
-  * Step 3 : use **ggplot()** function to draw scatter plot.
+  * 🔆 Step 3 : use **ggplot()** function to draw scatter plot.
     * Introduction :
       ```
       ggplot(dataframe_name, aes(x = column_name1, y = column_name2, color = column_name3, size = column_name4)) +
@@ -59,9 +59,9 @@
         <br>If the values in the column are big different, causes many points in the graph to be biased to one side,
         <br>it will let the plot not to easy read. (refer to the figure below) 
         <br>you can use log to reduce x axis or y axis value, and let point clearly distributed, increase readability for the plot.</br>  
-        
+
         ![image](https://user-images.githubusercontent.com/15766139/185030567-62c0fa08-679b-4fc7-aa06-2250e274f9c9.png)
-        
+
     * 📝 **example** : 
       ```
       # Scatter plot comparing pop and gdpPercap, with x axes on a log scale
@@ -70,19 +70,19 @@
           scale_x_log10()
       ```
     * 🔎 **result** :
-    
+
       ![image](https://user-images.githubusercontent.com/15766139/185029887-697ae00b-a93e-49f0-ad26-ba018232c083.png)
        
-* __Create scatter subplot__ : 
-  * You can add function **`facet_wrap(~ column_name)`**
-    * **~** : means **"by"**, meaning that you're splitting the plot by this column.
-    * 📝 **example** : 
-      ```
-      ggplot(gapminder_2007, aes(x = pop, y = lifeExp, color = continent, size = gdpPercap)) +
-          geom_point() +
-          scale_x_log10() +
-          facet_wrap(~ year)
-      ```
-    * 🔎 **result** : 
-      ![image](https://user-images.githubusercontent.com/15766139/185040187-752aba68-cb44-44b8-89af-a56645602194.png)
-  
+ * __Create scatter subplot__ : 
+   * You can add function **`facet_wrap(~ column_name)`**
+     * **~** : means **"by"**, meaning that you're splitting the plot by this column.
+     * 📝 **example** : 
+       ```
+       ggplot(gapminder_2007, aes(x = pop, y = lifeExp, color = continent, size = gdpPercap)) +
+           geom_point() +
+           scale_x_log10() +
+           facet_wrap(~ year)
+       ```
+     * 🔎 **result** : 
+       ![image](https://user-images.githubusercontent.com/15766139/185040187-752aba68-cb44-44b8-89af-a56645602194.png)
+
