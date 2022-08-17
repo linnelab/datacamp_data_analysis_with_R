@@ -2,7 +2,7 @@
 
 ## 2-2. Data visualization
 * __create a scatter plot__ :
-  * step 1 : load package : 
+  * Step 1 : load package : 
     * 🌟 **`ggplot2`** : data visualization.
     * **`gapminder`** : get dataset.
     * **`dplyr`** : transfrom data, like filter(), mutate(), arrange() function.
@@ -12,7 +12,7 @@
       library(dplyr)
       library(ggplot2)
       ```
-  * step 2 : use variable assignment to create a data subset, this data subset will use to draw plot.
+  * Step 2 : use variable assignment to create a data subset, this data subset will use to draw plot.
     * 📝 **example** : 
       ```
       # create gapminder_2007 data subset
@@ -40,7 +40,7 @@
       10 Belgium     Europe     2007    79.4  10392226    33693.
       # … with 132 more rows
       ```
-  * step 3 : use **ggplot()** function to draw scatter plot.
+  * Step 3 : use **ggplot()** function to draw scatter plot.
     * For example :
       ```
       ggplot(dataframe_name, aes(x = column_name1, y = column_name2, color = column_name3, size = column_name4)) +
