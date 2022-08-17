@@ -41,7 +41,7 @@
       # … with 132 more rows
       ```
   * Step 3 : use **ggplot()** function to draw scatter plot.
-    * For example :
+    * Introduction :
       ```
       ggplot(dataframe_name, aes(x = column_name1, y = column_name2, color = column_name3, size = column_name4)) +
           geom_point() +
