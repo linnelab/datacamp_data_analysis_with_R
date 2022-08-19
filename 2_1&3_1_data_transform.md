@@ -1,6 +1,6 @@
-# Lesson 2 : Introduction to the Tidyverse
+# Lesson 2 & 3 : Introduction to the Tidyverse and Data Manipulation with dplyr
 
-## 2-1. Data wrangling
+## 2-1 & 3-1. Data transform
 * __Introdution__ :
   * tidyverse tool : 
     * A collection of **`data science tools`** within R for **`transforming and visualizing data`**.
@@ -17,14 +17,14 @@
     * **`transforming data`**, such as filtering, sorting, and summarizing it.
 
 * __Install package__ :
-  * use **`install.packages("package_name")`**.
+  * ✒ use **`install.packages("package_name")`**.
   * run this script on R console.
   * 📝 **example** :
     ```
     install.packages("gapminder")
     install.packages("dplyr")
     ```
-
+    
 * __Import package__ :
   * ✒ use **`library()`** function.
   * 📝 **example** :
@@ -56,8 +56,63 @@
     10 Afghanistan Asia       1997    41.8 22227415      635.
     # … with 1,694 more rows
     ```
+
+* __Look at datasets__ :
+  * ✒ use **`glimpse(dataset_name)`** function.
+  * If you get a new datasets, you can use this function to view data content.
+  * 📝 **example** :
+    ```
+    # Loading package
+    library(gapminder)
+    library(dplyr)
+    
+    # Take a look at the gapminder dataset
+    glimpse(gapminder)
+    ```
+  * 🔎 **result** :
+    ```
+    Rows: 1,704
+    Columns: 6
+    $ country   <fct> "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", …
+    $ continent <fct> Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Europe, Europe, Eu…
+    $ year      <int> 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, 2002, 2007, 1952, 1957, 1962, …
+    $ lifeExp   <dbl> 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.822, 41.674, 41.763, 42.129, 43…
+    $ pop       <int> 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12881816, 13867957, 16317921, 22…
+    $ gdpPercap <dbl> 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, 978.0114, 852.3959, 649.3414, …
+    ```
+
+* __Select columns__ :
+  * ✒ use verb **`select(column_name1, column_name2, ...)`** function.
+  * 📝 **example** :
+    ```
+    # Loading package
+    library(gapminder)
+    library(dplyr)
+    
+    # Select columns
+    gapminder %>%
+      select(country, continent, year, lifeExp)
+    ```
+  * 🔎 **result** :
+    ```
+    # A tibble: 1,704 × 4
+       country      continent  year lifeExp
+       <fct>        <fct>     <int>   <dbl>
+     1 Afghanistan  Asia       1952    28.8
+     2 Afghanistan  Asia       1957    30.3
+     3 Afghanistan  Asia       1962    32.0
+     4 Afghanistan  Asia       1967    34.0
+     5 Afghanistan  Asia       1972    36.1
+     6 Afghanistan  Asia       1977    38.4
+     7 Afghanistan  Asia       1982    39.9
+     8 Afghanistan  Asia       1987    40.8
+     9 Afghanistan  Asia       1992    41.7
+    10 Afghanistan  Asia       1997    41.8
+    # … with 1,694 more rows
+    ```
+
 * __Filter data__ :
-  * use verb **`filter(condition1, condition2, ...)`** funciton.
+  * ✒ use verb **`filter(condition1, condition2, ...)`** funciton.
     * it will not to change original dataframe data (e.g. gapminder), it will create a new data frame.
   * 🌟 **note** : 
     * every time you apply a **`verb`**, you'll use a **`pipe (%>%)`**.
@@ -119,6 +174,7 @@
         <fct>   <fct>     <int>   <dbl>      <int>      <dbl>
       1 China   Asia       2002    72.0   1280400000    3119.
     ```
+    
 * __Sorting data__ :
   * use verb **`arrange()`** function
   * sorting a table based on variable (i.e. column).
@@ -279,4 +335,47 @@
      9 France            Europe     2007    80.7  61083916    30470.          968.
     10 Canada            Americas   2007    80.7  33390141    36319.          968.
     # … with 132 more rows
+    ```
+
+* __Summary practice__ :
+  * 📝 **example** :
+    ```
+    # read rds file
+    filename <- file.choose()          # it will show a windows as pic 1, you can choice path file.
+    counties <- readRDS(filename)
+
+    # Loading package
+    library(dplyr)
+    
+    # Select the five columns
+    # Calculate men percentage and save to the proportion_men variable
+    # Filter for population of at least 10,000
+    # Arrange proportion of men in descending order
+    counties %>% 
+      select(state, county, population, men, women) %>% 
+      mutate(proportion_men = men / population) %>% 
+      filter(population > 10000) %>% 
+      arrange(desc(proportion_men))
+    ```
+    [pic 1] :
+    
+    ![image](https://user-images.githubusercontent.com/15766139/185534134-f30ae5cd-c8fa-4b22-8666-292c4fcb39bb.png)
+
+    
+  * 🔎 **result** :
+    ```
+    # A tibble: 2,437 × 6
+       state      county         population   men women proportion_men
+       <chr>      <chr>               <dbl> <dbl> <dbl>          <dbl>
+     1 Virginia   Sussex              11864  8130  3734          0.685
+     2 California Lassen              32645 21818 10827          0.668
+     3 Georgia    Chattahoochee       11914  7940  3974          0.666
+     4 Louisiana  West Feliciana      15415 10228  5187          0.664
+     5 Florida    Union               15191  9830  5361          0.647
+     6 Texas      Jones               19978 12652  7326          0.633
+     7 Missouri   DeKalb              12782  8080  4702          0.632
+     8 Texas      Madison             13838  8648  5190          0.625
+     9 Virginia   Greensville         11760  7303  4457          0.621
+    10 Texas      Anderson            57915 35469 22446          0.612
+    # … with 2,427 more rows    
     ```
