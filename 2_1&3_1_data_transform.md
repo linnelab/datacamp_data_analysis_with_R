@@ -1,4 +1,4 @@
-# Lesson 2 & 3 : Introduction to the Tidyverse and Data Manipulation with dplyr
+# Lesson 2 & 3 : Introduction to the Tidyverse and dplyr
 
 ## 2-1 & 3-1. Data transform
 * __Introdution__ :
@@ -176,7 +176,7 @@
     ```
     
 * __Sorting data__ :
-  * use verb **`arrange()`** function
+  * ✒ use verb **`arrange()`** function
   * sorting a table based on variable (i.e. column).
     * it will not to change original dataframe data (e.g. gapminder), it will create a new data frame.
   * 📝 **example** :
@@ -247,7 +247,7 @@
     ```
     
 * __Change column data or add new column__ :
-  * use verb **`mutate()`** function.
+  * ✒ use verb **`mutate()`** function.
   * changes or adds variables (i.e. variable = column).
     * it will not to change original dataframe data (e.g. gapminder), it will create a new data frame.
   * 📝 **example** :
@@ -357,9 +357,9 @@
       filter(population > 10000) %>% 
       arrange(desc(proportion_men))
     ```
-    [pic 1] :
+    * 🍀 pic 1 :
     
-    ![image](https://user-images.githubusercontent.com/15766139/185534134-f30ae5cd-c8fa-4b22-8666-292c4fcb39bb.png)
+      ![image](https://user-images.githubusercontent.com/15766139/185534134-f30ae5cd-c8fa-4b22-8666-292c4fcb39bb.png)
 
     
   * 🔎 **result** :
