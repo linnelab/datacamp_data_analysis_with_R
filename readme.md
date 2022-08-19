@@ -22,6 +22,6 @@
 |Session|Name                                 |Notes                                                                                             |Slide  |Dataset|
 |-------|-------------------------------------|--------------------------------------------------------------------------------------------------|-------|-------|
 |3-1    |Transforming Data with dplyr         |[Link](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/2_1%263_1_data_transform_with_dplyr.md)|[Link](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/3_1_transforming_data_with_dplyr.pdf)|[counties](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/counties.rds)|
-|3-2    |Aggregating Data                     |        |      |
-|3-3    |Selecting and Transforming Data      |        |      |
-|3-4    |Case Study: The babynames Dataset    |        |[babynames](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/babynames.rds)|
+|3-2    |Aggregating Data                     |        |      | |
+|3-3    |Selecting and Transforming Data      |        |      | |
+|3-4    |Case Study: The babynames Dataset    |        |      |[babynames](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/babynames.rds)|
