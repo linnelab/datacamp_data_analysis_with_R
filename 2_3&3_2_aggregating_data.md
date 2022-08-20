@@ -7,18 +7,42 @@
       * **column_name1** : count this column.
       * **wt** : "weight", it will according to column_name1 to calculate the number of column_name2.
       * **sort** : If TRUE, it will sort in descending order for the count column result.
-  * 📝 **example** : 
+      
+  * 📝 **example 1** : 
     ```
     # Loading package
     library(dplyr) %>%
     
-    # Add population_walk containing the total number of people who walk to work 
-    mutate(population_walk = population * walk / 100) %>%
-    
-    # Find the number of population_walk in each state, so count weighted by the new column, and sort in descending order.
-    count(state, wt = population_walk, sort = TRUE)
+    # Find the number of counties in each region
+    counties %>%
+        count(region, sort = TRUE)
     ```
-  * 🔎 **result** :
+    
+  * 🔎 **result 1** :
+    ```
+    # A tibble: 4 x 2
+      region            n
+      <chr>         <int>
+    1 South          1420
+    2 North Central  1054
+    3 West            447
+    4 Northeast       217
+    ```
+    
+  * 📝 **example 2** : 
+    ```
+    # Loading package
+    library(dplyr)
+    
+    # Find the number of population_walk in each state
+    ## step 1- add population_walk containing the total number of people who walk to work   
+    ## step 2 - count weighted by the new column, and sort in descending order.
+    counties %>%
+        mutate(population_walk = population * walk / 100) %>%    
+        count(state, wt = population_walk, sort = TRUE)
+    ```
+    
+  * 🔎 **result 2** :
     ```
      # A tibble: 50 x 2
        state            n
