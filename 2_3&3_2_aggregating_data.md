@@ -16,8 +16,7 @@
     # Find the number of counties in each region
     counties %>%
         count(region, sort = TRUE)
-    ```
-    
+    ```   
   * 🔎 **result 1** :
     ```
     # A tibble: 4 x 2
@@ -27,8 +26,7 @@
     2 North Central  1054
     3 West            447
     4 Northeast       217
-    ```
-    
+    ```    
   * 📝 **example 2** : 
     ```
     # Loading package
@@ -40,8 +38,7 @@
     counties %>%
         mutate(population_walk = population * walk / 100) %>%    
         count(state, wt = population_walk, sort = TRUE)
-    ```
-    
+    ```    
   * 🔎 **result 2** :
     ```
      # A tibble: 50 x 2
@@ -59,34 +56,7 @@
     10 Washington     239764.
     # ... with 40 more rows
     ```
-
-* __Summarize data__ :
-  * use verb **`summarize()`** function.
-  * you can use these functions for summarizing :
-    * **mean()** : the sum of the values / the number of values.
-    * **sum()** 
-    * **median()** : the middle most value in a data series is called the median.
-    * **max()** 
-    * **min()**
-    * **n()** : calculate row count, equal count() function. 
-  * 📝 **example** : 
-    ```
-    # Loading package
-    library(gapminder)
-    library(dplyr)
     
-    # Filter for 1957 then summarize the median life expectancy and the maximum GDP per capita
-    gapminder %>%
-        filter(year == 1957) %>%
-        summarize(medianLifeExp = median(lifeExp), maxGdpPerCap = max(gdpPercap))
-    ```
-  * 🔎 **result** :
-    ```
-    # A tibble: 1 × 2
-      medianLifeExp  maxGdpPerCap
-              <dbl>         <dbl>
-    1          48.4       113523.
-    ```
 * __Group by data__ :
   * use verb **`group_by()`** funciton.
   * 📝 **example** : 
@@ -118,6 +88,60 @@
     10 Africa     1997          52.8       14723.
     # … with 50 more rows
     ```
+    
+* __Summarize data__ :
+  * use verb **`summarize()`** function.
+  * you can use these functions for summarizing :
+    * **mean()** : the sum of the values / the number of values.
+    * **sum()** 
+    * **median()** : the middle most value in a data series is called the median.
+    * **max()** 
+    * **min()**
+    * **n()** : calculate row count, equal count() function. 
+  * 📝 **example 1** : 
+    ```
+    # Loading package
+    library(gapminder)
+    library(dplyr)
+    
+    # Filter for 1957 then summarize the median life expectancy and the maximum GDP per capita
+    gapminder %>%
+        filter(year == 1957) %>%
+        summarize(medianLifeExp = median(lifeExp), maxGdpPerCap = max(gdpPercap))
+    ```
+  * 🔎 **result 1** :
+    ```
+    # A tibble: 1 × 2
+      medianLifeExp  maxGdpPerCap
+              <dbl>         <dbl>
+    1          48.4       113523.
+    ```
+  * 📝 **example 2** : 
+    ```
+    # Loading package
+    library(dplyr)
+    
+    # Find the total population in each region and state, then use total_get average and median population in each region
+    ## step 1 - group region and state
+    ## step 2 - calculate the total population
+    ## step 3 - calculate the average_pop and median_pop
+    counties %>%
+        group_by(region, state) %>%
+        summarize(total_pop = sum(population)) %>%
+        summarize(average_pop = mean(total_pop),
+                  median_pop = median(total_pop))
+    ```
+  * 🔎 **result 2** :
+    ```
+    # A tibble: 4 x 3
+      region        average_pop median_pop
+      <chr>               <dbl>      <dbl>
+    1 North Central    5627687.    5580644
+    2 Northeast        6221058.    3593222
+    3 South            7370486     4804098
+    4 West             5722755.    2798636
+    ```
+    
 * __Visualizing summarized data__ :
   * If you want to specify the **y-axis to start at zero**, you can add **`expand_limits(y = 0)`** to the end of the ggplot() function.
   * 📝 **example** : 
@@ -140,3 +164,76 @@
     ```
   * 🔎 **result** :
     ![image](https://user-images.githubusercontent.com/15766139/185286125-c4d0f4a5-4183-44e3-9cf1-270f277eebe9.png)
+ 
+* __Get top n data__ :
+  * use verb **`top_n()`** function.
+  * 📝 **example** : 
+    ```
+    # Loading package
+    library(dplyr)
+
+    # Finding the highest avgerage income state in each region
+    counties %>%
+        group_by(region, state) %>%
+        summarize(avg_income = mean(income)) %>%
+        top_n(1, avg_income)
+    ```
+  * 🔎 **result** :
+    ```
+    # A tibble: 4 x 3
+    # Groups:   region [4]
+      region        state        average_income
+      <chr>         <chr>                 <dbl>
+    1 North Central North Dakota         55575.
+    2 Northeast     New Jersey           73014.
+    3 South         Maryland             69200.
+    4 West          Alaska               65125.  
+    ```
+    
+* __Cancel group by__ :
+  * use verb **`ungroup()`** function.
+  * If you don't want to keep columns as a group, you can use this function.
+  * 📝 **example** : 
+    ```
+    # Loading package
+    library(dplyr)
+    
+    # Find the total population for each combination of state and metro
+    # Extract the most populated row for each state
+    counties %>%
+        group_by(state, metro) %>%
+        summarize(total_pop = sum(population)) %>%
+        top_n(1, total_pop)
+        
+    # Count the states with more people in Metro or Nonmetro areas    
+    counties %>%
+        group_by(state, metro) %>%
+        summarize(total_pop = sum(population)) %>%
+        top_n(1, total_pop) %>%
+        ungroup() %>%
+        count(metro)
+    ```
+  * 🔎 **result** :
+    ```
+    # A tibble: 50 × 3
+    # Groups:   state [50]
+       state       metro total_pop
+       <chr>       <chr>     <dbl>
+     1 Alabama     Metro   3671377
+     2 Alaska      Metro    494990
+     3 Arizona     Metro   6295145
+     4 Arkansas    Metro   1806867
+     5 California  Metro  37587429
+     6 Colorado    Metro   4590896
+     7 Connecticut Metro   3406918
+     8 Delaware    Metro    926454
+     9 Florida     Metro  18941821
+    10 Georgia     Metro   8233886
+    # … with 40 more rows
+    
+    # A tibble: 2 × 2
+      metro        n
+      <chr>    <int>
+    1 Metro       44
+    2 Nonmetro     6
+    ```
