@@ -1,6 +1,41 @@
 # Lesson 2 : Introduction to the Tidyverse
 
-## 2-3. Grouping and summarizing
+## 2-3 & 3-2. Aggregating data
+* __Count data__ :
+  * use verb **`count(column_name1, wt = column_name2, sort = TRUE)`** function.
+    * you can add this argument
+      * **column_name1** : count this column.
+      * **wt** : "weight", it will according to column_name1 to calculate the number of column_name2.
+      * **sort** : If TRUE, it will sort in descending order for the count column result.
+  * 📝 **example** : 
+    ```
+    # Loading package
+    library(dplyr) %>%
+    
+    # Add population_walk containing the total number of people who walk to work 
+    mutate(population_walk = population * walk / 100) %>%
+    
+    # Find the number of population_walk in each state, so count weighted by the new column, and sort in descending order.
+    count(state, wt = population_walk, sort = TRUE)
+    ```
+  * 🔎 **result** :
+    ```
+     # A tibble: 50 x 2
+       state            n
+       <chr>          <dbl>
+     1 New York       1237938.
+     2 California     1017964.
+     3 Pennsylvania   505397.
+     4 Texas          430783.
+     5 Illinois       400346.
+     6 Massachusetts  316765.
+     7 Florida        284723.
+     8 New Jersey     273047.
+     9 Ohio           266911.
+    10 Washington     239764.
+    # ... with 40 more rows
+    ```
+
 * __Summarize data__ :
   * use verb **`summarize()`** function.
   * you can use these functions for summarizing :
@@ -9,6 +44,7 @@
     * **median()** : the middle most value in a data series is called the median.
     * **max()** 
     * **min()**
+    * **n()** : calculate row count, equal count() function. 
   * 📝 **example** : 
     ```
     # Loading package
