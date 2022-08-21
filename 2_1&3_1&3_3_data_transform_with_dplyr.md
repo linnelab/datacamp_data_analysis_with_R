@@ -676,7 +676,7 @@
     ```
     
 * __Summary practice__ :
-  * 📝 **example** :
+  * 📝 **example 1** :
     ```
     # read rds file
     filename <- file.choose()          # it will show a windows as pic 1, you can choice path file.
@@ -699,7 +699,7 @@
     
       ![image](https://user-images.githubusercontent.com/15766139/185534134-f30ae5cd-c8fa-4b22-8666-292c4fcb39bb.png)
  
-  * 🔎 **result** :
+  * 🔎 **result 1** :
     ```
     # A tibble: 2,437 × 6
        state      county         population   men women proportion_men
@@ -715,4 +715,96 @@
      9 Virginia   Greensville         11760  7303  4457          0.621
     10 Texas      Anderson            57915 35469 22446          0.612
     # … with 2,427 more rows    
+    ```
+  * 📝 **example 2** :
+    ```
+    # Change the name of the unemployment column
+    counties %>%
+      rename(unemployment_rate = unemployment)
+
+    # Keep the state and county columns, and the columns containing poverty
+    counties %>%
+      select(state, county, contains("poverty"))
+
+    # Calculate the fraction_women column without dropping the other columns
+    counties %>%
+      mutate(fraction_women = women / population)
+
+    # Keep only the state, county, and employment_rate columns
+    counties %>%
+      transmute(state, county, employment_rate = employed / population)
+    ```
+  * 🔎 **result 2** :
+    ```
+    # A tibble: 3,138 × 40
+       census_id state  county region metro popul…¹   men women hispa…² white black native asian pacific citiz…³ income incom…⁴
+       <chr>     <chr>  <chr>  <chr>  <chr>   <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>  <dbl> <dbl>   <dbl>   <dbl>  <dbl>   <dbl>
+     1 1001      Alaba… Autau… South  Metro   55221 26745 28476     2.6  75.8  18.5    0.4   1         0   40725  51281    2391
+     2 1003      Alaba… Baldw… South  Metro  195121 95314 99807     4.5  83.1   9.5    0.6   0.7       0  147695  50254    1263
+     3 1005      Alaba… Barbo… South  Nonm…   26932 14497 12435     4.6  46.2  46.7    0.2   0.4       0   20714  32964    2973
+     4 1007      Alaba… Bibb   South  Metro   22604 12073 10531     2.2  74.5  21.4    0.4   0.1       0   17495  38678    3995
+     5 1009      Alaba… Blount South  Metro   57710 28512 29198     8.6  87.9   1.5    0.3   0.1       0   42345  45813    3141
+     6 1011      Alaba… Bullo… South  Nonm…   10678  5660  5018     4.4  22.2  70.7    1.2   0.2       0    8057  31938    5884
+     7 1013      Alaba… Butler South  Nonm…   20354  9502 10852     1.2  53.3  43.8    0.1   0.4       0   15581  32229    1793
+     8 1015      Alaba… Calho… South  Metro  116648 56274 60374     3.5  73    20.3    0.2   0.9       0   88612  41703     925
+     9 1017      Alaba… Chamb… South  Nonm…   34079 16258 17821     0.4  57.3  40.3    0.2   0.8       0   26462  34177    2949
+    10 1019      Alaba… Chero… South  Nonm…   26008 12975 13033     1.5  91.7   4.8    0.6   0.3       0   20600  36296    1710
+    # … with 3,128 more rows, 23 more variables: income_per_cap <dbl>, income_per_cap_err <dbl>, poverty <dbl>,
+    #   child_poverty <dbl>, professional <dbl>, service <dbl>, office <dbl>, construction <dbl>, production <dbl>,
+    #   drive <dbl>, carpool <dbl>, transit <dbl>, walk <dbl>, other_transp <dbl>, work_at_home <dbl>, mean_commute <dbl>,
+    #   employed <dbl>, private_work <dbl>, public_work <dbl>, self_employed <dbl>, family_work <dbl>,
+    #   unemployment_rate <dbl>, land_area <dbl>, and abbreviated variable names ¹​population, ²​hispanic, ³​citizens,
+    #   ⁴​income_err
+    
+    
+    # A tibble: 3,138 × 4
+       state   county   poverty child_poverty
+       <chr>   <chr>      <dbl>         <dbl>
+     1 Alabama Autauga     12.9          18.6
+     2 Alabama Baldwin     13.4          19.2
+     3 Alabama Barbour     26.7          45.3
+     4 Alabama Bibb        16.8          27.9
+     5 Alabama Blount      16.7          27.2
+     6 Alabama Bullock     24.6          38.4
+     7 Alabama Butler      25.4          39.2
+     8 Alabama Calhoun     20.5          31.6
+     9 Alabama Chambers    21.6          37.2
+    10 Alabama Cherokee    19.2          30.1
+    # … with 3,128 more rows
+    
+    
+    # A tibble: 3,138 × 41
+       census_id state  county region metro popul…¹   men women hispa…² white black native asian pacific citiz…³ income incom…⁴
+       <chr>     <chr>  <chr>  <chr>  <chr>   <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>  <dbl> <dbl>   <dbl>   <dbl>  <dbl>   <dbl>
+     1 1001      Alaba… Autau… South  Metro   55221 26745 28476     2.6  75.8  18.5    0.4   1         0   40725  51281    2391
+     2 1003      Alaba… Baldw… South  Metro  195121 95314 99807     4.5  83.1   9.5    0.6   0.7       0  147695  50254    1263
+     3 1005      Alaba… Barbo… South  Nonm…   26932 14497 12435     4.6  46.2  46.7    0.2   0.4       0   20714  32964    2973
+     4 1007      Alaba… Bibb   South  Metro   22604 12073 10531     2.2  74.5  21.4    0.4   0.1       0   17495  38678    3995
+     5 1009      Alaba… Blount South  Metro   57710 28512 29198     8.6  87.9   1.5    0.3   0.1       0   42345  45813    3141
+     6 1011      Alaba… Bullo… South  Nonm…   10678  5660  5018     4.4  22.2  70.7    1.2   0.2       0    8057  31938    5884
+     7 1013      Alaba… Butler South  Nonm…   20354  9502 10852     1.2  53.3  43.8    0.1   0.4       0   15581  32229    1793
+     8 1015      Alaba… Calho… South  Metro  116648 56274 60374     3.5  73    20.3    0.2   0.9       0   88612  41703     925
+     9 1017      Alaba… Chamb… South  Nonm…   34079 16258 17821     0.4  57.3  40.3    0.2   0.8       0   26462  34177    2949
+    10 1019      Alaba… Chero… South  Nonm…   26008 12975 13033     1.5  91.7   4.8    0.6   0.3       0   20600  36296    1710
+    # … with 3,128 more rows, 24 more variables: income_per_cap <dbl>, income_per_cap_err <dbl>, poverty <dbl>,
+    #   child_poverty <dbl>, professional <dbl>, service <dbl>, office <dbl>, construction <dbl>, production <dbl>,
+    #   drive <dbl>, carpool <dbl>, transit <dbl>, walk <dbl>, other_transp <dbl>, work_at_home <dbl>, mean_commute <dbl>,
+    #   employed <dbl>, private_work <dbl>, public_work <dbl>, self_employed <dbl>, family_work <dbl>, unemployment <dbl>,
+    #   land_area <dbl>, fraction_women <dbl>, and abbreviated variable names ¹​population, ²​hispanic, ³​citizens, ⁴​income_err
+    
+    
+    # A tibble: 3,138 × 3
+       state   county   employment_rate
+       <chr>   <chr>              <dbl>
+     1 Alabama Autauga            0.434
+     2 Alabama Baldwin            0.441
+     3 Alabama Barbour            0.319
+     4 Alabama Bibb               0.367
+     5 Alabama Blount             0.384
+     6 Alabama Bullock            0.362
+     7 Alabama Butler             0.384
+     8 Alabama Calhoun            0.406
+     9 Alabama Chambers           0.402
+    10 Alabama Cherokee           0.390
+    # … with 3,128 more rows
     ```
