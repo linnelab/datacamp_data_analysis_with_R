@@ -674,7 +674,7 @@
     10 Florida    Orange            1229039   1360.
     # … with 31 more rows
     ```
-
+    
 * __Summary practice__ :
   * 📝 **example** :
     ```
