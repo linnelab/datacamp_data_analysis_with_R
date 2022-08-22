@@ -1,6 +1,6 @@
-# Lesson 2 : Introduction to the Tidyverse
+# Lesson 2 : Introduction to the Tidyverse and dplyr
 
-## 2-3 & 3-2. Aggregating data
+## 2-2. Aggregating data
 * __Count data__ :
   * use verb **`count(column_name1, wt = column_name2, sort = TRUE)`** function.
     * you can add this argument
