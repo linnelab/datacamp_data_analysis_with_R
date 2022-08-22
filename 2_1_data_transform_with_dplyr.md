@@ -1,6 +1,6 @@
-# Lesson 2 & 3 : Introduction to the Tidyverse and dplyr
+# Lesson 2 : Introduction to the Tidyverse and dplyr
 
-## 2-1 & 3-1 & 3-3 & 3-4. Data transform with dplyr
+## 2-1. Data transform with dplyr
 * __Introdution__ :
   * tidyverse tool : 
     * A collection of **`data science tools`** within R for **`transforming and visualizing data`**.
