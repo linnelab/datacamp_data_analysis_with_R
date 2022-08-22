@@ -1,6 +1,6 @@
-# Lesson 3 : Data Manipulation with dplyr
+# Lesson 2 : Introduction to the Tidyverse and dplyr
 
-## 3-5. Summary Practice
+## 2-6. Summary Practice
 
 * practice for chapter 3 content.
 * use babynames dataset, link : https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/babynames.rds
