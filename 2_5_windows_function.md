@@ -1,6 +1,6 @@
-# Lesson 3 : Data Manipulation with dplyr
+# Lesson 2 : Introduction to the Tidyverse and dplyr
 
-## 3-4. Windows Function
+## 2-5. Windows Function
 
 * __Compare consecutive steps__ :
   * use verb **`lag()`** function.
