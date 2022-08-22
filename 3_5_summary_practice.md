@@ -4,7 +4,7 @@
 
 * practice for chapter 3 content.
 * use babynames dataset, link : https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/babynames.rds
-* 🌻 practice 1 :
+* 🌻 **practice 1** :
   * filter for only the year 1990.
   * sort the table in descending order of the number of babies born.
   ```
@@ -15,7 +15,7 @@
       filter(year == 1990) %>%
       arrange(desc(number))
   ```
-* 🚀 result 1 :
+* 🚀 **result 1** :
   ```
   # A tibble: 21,223 × 3
       year name        number
@@ -33,7 +33,7 @@
   # … with 21,213 more rows  
   ```
   
-* 🌻 practice 2 :
+* 🌻 **practice 2** :
   * find the most common name for US babies in each year.
   ```
   # Loading package
@@ -43,7 +43,7 @@
       group_by(year) %>%
       top_n(1, number)
   ```
-* 🚀 result 2 :
+* 🚀 **result 2** :
   ```
   # A tibble: 28 × 3
   # Groups:   year [28]
@@ -62,7 +62,7 @@
     # … with 18 more rows
   ```
   
-* 🌻 practice 3 :
+* 🌻 **practice 3** :
   * filter for the names Steven, Thomas, and Matthew.
   * plot the names using a different color for each name.
   ```
@@ -76,11 +76,11 @@
   ggplot(selected_names, aes(x = year, y = number, color = name)) +
     geom_line()
   ```
-* 🚀 result 3 :
+* 🚀 **result 3** :
   
   ![image](https://user-images.githubusercontent.com/15766139/185846721-5f017e09-efe4-4174-a37c-878bcd9bef20.png)
 
-* 🌻 practice 4 : 
+* 🌻 **practice 4** : 
   * step 1 - calculate the fraction of people born each year with the same name
     * calculate the total number of people born in that year in this dataset as year_total.
     * use year_total to calculate the fraction of people born in each year that have each name.
@@ -97,7 +97,7 @@
       group_by(name) %>%
       top_n(1, fraction)
   ```
-* 🚀 result 4 :
+* 🚀 **result 4** :
   ```
   # A tibble: 48,040 × 5
   # Groups:   name [48,040]
@@ -116,7 +116,7 @@
   # … with 48,030 more rows
   ```
 
-* 🌻 practice 5 : 
+* 🌻 **practice 5** : 
   * step 1 - adding the total and maximum for each name
     * add name_total column, the sum of the number of babies born with that name in the dataset
     * add name_max column, with the maximum number of babies born in any year
@@ -145,7 +145,7 @@
   ggplot(names_filtered,  aes(x = year, y = fraction_max, color = name)) +
       geom_line()
   ```
-* 🚀 result 5 :
+* 🚀 **result 5** :
   ```
   # A tibble: 332,595 × 6
       year name    number name_total name_max fraction_max
@@ -165,7 +165,7 @@
   
   ![image](https://user-images.githubusercontent.com/15766139/185863117-0bdf95f1-7d5b-489f-9a35-6e4b21c17b6f.png)
 
-* 🌻 practice 6 : 
+* 🌻 **practice 6** : 
   * Step 1 - practice 4 process result to save as babynames_fraction
   * Step 2 - using ratios to describe the frequency of a name
     * arrange the data in ascending order of name and then year.
@@ -191,7 +191,7 @@
       group_by(name) %>%
       mutate(ratio = fraction / lag(fraction))
   ```
-* 🚀 result 6 :
+* 🚀 **result 6** :
   ```  
   # A tibble: 332,595 x 5
       year name    number year_total  fraction
@@ -226,7 +226,7 @@
   # ... with 332,585 more rows
   ```
   
-* 🌻 practice 7 : 
+* 🌻 **practice 7** : 
   * Step 1 - use practice 6 to filter fraction greater than or equal to 0.00001
   * Step 2 - 
     * extract the largest ratio from each name 
@@ -247,7 +247,7 @@
       arrange(desc(ratio)) %>%
       filter(fraction >= 0.001)
   ```
-* 🚀 result 7 :
+* 🚀 **result 7** :
   ```  
   # A tibble: 291 x 6
   # Groups:   name [291]
