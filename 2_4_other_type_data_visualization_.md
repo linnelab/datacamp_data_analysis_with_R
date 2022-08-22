@@ -1,4 +1,4 @@
-# Lesson 2 : Introduction to the Tidyverse
+# Lesson 2 : Introduction to the Tidyverse and dplyr
 
 ## 2-4. Other type data visualization
 * 🌟 create other type plot method almost **same as "2-2. Data Visualization - Scatter Plot"**, so use ggplot() method can refer to 2-2 chapter, 
