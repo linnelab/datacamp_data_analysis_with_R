@@ -19,3 +19,8 @@
 |[2-4. Other Type Data Visualization](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/2_4_other_type_data_visualization_.md)|[2-4. Types of visualizations](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/2_4_types_of_visualizations.pdf)|gapminder|
 |[2-5. Windows Function](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/2_5_windows_function.md)|[3-4. Case Study: The babynames Dataset](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/3_4_case_study_the_babynames_dataset.pdf)|[babynames](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/babynames.rds)|
 |[2-6. Summary Practice](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/2_6_summary_practice.md)|[3-4. Case Study: The babynames Dataset](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/3_4_case_study_the_babynames_dataset.pdf)|[babynames](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/babynames.rds)|
+
+#### 🛎 Chapter 3 : Joining Data with dplyr
+|Notes                                                                                             |Related Slide|Dataset|
+|--------------------------------------------------------------------------------------------------|----------|---------|
+|[3-1. Inner Join]()|[4-1. Joining Tables](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/4_1_joining_tables.pdf)||
