@@ -15,7 +15,7 @@
       first_table >%>
           left_join(second_table, by = c("column_name1", "column_name2"), suffix = c("_name1", "_name2"))    
       ```
-  * diff with others join : only change verb function left_join(), other argument usage same as other join method.
+  * what's different with others join method : only change verb function left_join(), other argument usage same as other join method.
   * result table will contain blue square.
   
     ![image](https://user-images.githubusercontent.com/15766139/186307141-dc1063d9-02c3-4dd6-a062-7b92fcd8fa5b.png)
