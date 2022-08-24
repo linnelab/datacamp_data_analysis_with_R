@@ -4,21 +4,11 @@
 
 * self join table :
   * ✒ use verb **`inner_join()`** function.
-    * ✒ can match to use **`replace_na()`** function to replace missing values. (e.g. example 1)
-      * For example :
-        ```
-        replace_na(list(column_name1 = value1))
-        ```
-    * ✒ or use **`is.na()`** funciton to get contain missing data. (e.g. example 1)
-      * For example :
-        ```
-        is.na(column_name1)
-        ```
-  * diff with others join : usage same as inner_join(), but it use self table join itself.
+  * what's different with others join method : same as inner_join(), but it join table to itself.
   
   * 📝 **example 1** : 
     ```
-    # 
+    # Join themes to itself again to find the child relationships
     themes %>% 
         inner_join(themes, by = c("id" = "parent_id"), suffix = c("_parent", "_child"))
     
@@ -26,7 +16,7 @@
     themes %>% 
         inner_join(themes, by = c("id" = "parent_id"), suffix = c("_parent", "_child")) %>%
         inner_join(themes, by = c("id_child" = "parent_id"), suffix = c("_parent", "_grandchild"))
-    ```
+    ```   
     
   * 🔎 **result 1** :
     ```
@@ -44,8 +34,7 @@
      9     1 Technic            NA       20 Throwbot Slizer       
     10     1 Technic            NA       21 Universal Building Set
     # … with 534 more rows
-    
-    
+        
     # A tibble: 158 × 7
        id_parent name_parent parent_id id_child name_child id_grandchild name       
            <dbl> <chr>           <dbl>    <dbl> <chr>              <dbl> <chr>      
