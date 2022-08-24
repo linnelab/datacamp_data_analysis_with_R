@@ -125,6 +125,7 @@
      9 7965-1  2412b          72       20
     10 7965-1  3010           71       19
     # … with 253 more rows
+    
     # star_destroyer
     # A tibble: 293 × 4
        set_num part_num color_id quantity
@@ -140,8 +141,7 @@
      9 75190-1 3020           71       16
     10 75190-1 6141           35       16
     # … with 283 more rows
-    
-    
+        
     # A tibble: 263 × 6
        set_num_falcon part_num color_id quantity_falcon set_num_star_destroyer
        <chr>          <chr>       <dbl>           <dbl> <chr>                 
