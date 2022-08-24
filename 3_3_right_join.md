@@ -14,7 +14,7 @@
         ```
         is.na(column_name1)
         ```
-  * diff with others join : only change verb function right_join(), other argument usage same as other join method.
+  * what's different with others join method : only change verb function right_join(), other argument usage same as other join method.
   * result table will contain blue square.
   
     ![image](https://user-images.githubusercontent.com/15766139/186334292-61ca2865-4c1c-4eb0-a62a-8391fac88dbd.png)
