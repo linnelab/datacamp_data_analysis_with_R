@@ -1,6 +1,6 @@
-# Lesson 2 : Introduction to the Tidyverse and dplyr
+# Lesson 4 : Introduction to Data Visualization with ggplot2
 
-## 2-4. Other type data visualization
+## 4-2. Other type data visualization
 * 🌟 create other type plot method almost **same as "2-2. Data Visualization - Scatter Plot"**, so use ggplot() method can refer to 2-2 chapter, 
       only **different** from using **`geom_xxxx()`** function **(xxxx indicate other type plot)**. 
 * __Line plot__ :
