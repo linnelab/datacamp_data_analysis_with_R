@@ -29,3 +29,10 @@
 |[3-4. Self Join](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/3_4_self_join.md)|[4-2. Left and right Joins](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/4_2_left_and_right_Joins.pdf)|[themes](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/dataset/themes.rds)|
 |[3-5. Full Join](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/3_5_full_join.md)|[4-3. Full Semi And Anti Joins](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/4_3_full_semi_and_anti_joins.pdf)|batman、star_wars|
 |[3-6. Semi and Anti Join](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/3_6_semi_anti_join.md)|[4-3. Full Semi And Anti Joins](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/4_3_full_semi_and_anti_joins.pdf)|batmobile、batwing|
+
+
+#### 🛎 Chapter 4 : Introduction to Data Visualization with ggplot2
+|Notes                                                                                             |Related Slide|Dataset|
+|--------------------------------------------------------------------------------------------------|----------|---------|
+|[4-1. Data Visualization Scatter Plot](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/2_3_data_visualization_scatter_plot.md)|[2-2. Data Visualization Scatter Plot](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/2_2_data_visualization_scatter_plot.pdf)|gapminder|
+|[4-2. Other Type Data Visualization](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/2_4_other_type_data_visualization_.md)|[2-4. Types of visualizations](https://github.com/linnelab/datacamp_data_analysis_with_R/blob/main/slide/2_4_types_of_visualizations.pdf)|gapminder|
